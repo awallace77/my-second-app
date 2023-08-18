@@ -5,8 +5,9 @@
       <input type="text" [(ngModel)]="name" />
       <p>{{ name }}</p>
       <hr />
-      <p>{{ randomString() }}</p>
-
+      <button class="btn btn-primary" (click)="onShowDetails()">Display Details</button>
+      <p *ngIf="showDetails">Secret Password = 'Goatman'</p>
+      <p [ngClass]="{fifth}" *ngFor="let click of buttonClicks"></p>
     </div>
   </div>
 </div>
