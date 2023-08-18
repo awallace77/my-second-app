@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'My App';
   hello = 'hello';
   name = 'Andrew';
+
+  randomString(): string{
+    return "Hellow World";
+  }
 }

@@ -1,3 +1,13 @@
-<input type="text" [(ngModel)]="name" />
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>App Component</h1>
+      <input type="text" [(ngModel)]="name" />
+      <p>{{ name }}</p>
+      <hr />
+      <p>{{ randomString() }}</p>
 
-<p>{{ name }}</p>
+    </div>
+  </div>
+</div>
+
