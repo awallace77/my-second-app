@@ -1,5 +1,4 @@
-<h2>Servers Component</h2>
-<hr />
+<label>Servers Component</label>
   <!-- <input
     type="text"
     class="form-control"
@@ -14,6 +13,7 @@
 />
 
 <button class="btn btn-primary" [disabled]='!allowNewServer' (click)="onCreateServer()">ADD SERVER</button>
-<p>{{ serverName }}</p>
-<app-server></app-server>
-<app-server></app-server>
+<p *ngIf="serverCreated; else otherContent">Server was created, server name is {{ serverName }}</p>
+<ng-template #otherContent><p>No server has been created</p></ng-template>
+<app-server *ngFor="let server of serverList"></app-server>
+

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServerComponent } from '../server/server.component';
 
 @Component({
   selector: 'app-servers',
@@ -9,7 +10,9 @@ export class ServersComponent {
 
   allowNewServer = false;
   serverCreationStatus = 'No server created';
-  serverName = "No server name";
+  serverName = "";
+  serverCreated = false;
+  serverList = ['Test Server', 'Live Server'];
 
   constructor(){
     setTimeout(() => {
@@ -18,7 +21,9 @@ export class ServersComponent {
   }
 
   onCreateServer(){
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server was created';
+    this.serverList.push(this.serverName);
   }
 
   onUpdateServerName(event){
