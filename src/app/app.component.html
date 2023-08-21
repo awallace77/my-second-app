@@ -7,7 +7,7 @@
       <hr />
       <button class="btn btn-primary" (click)="onShowDetails()">Display Details</button>
       <p *ngIf="showDetails">Secret Password = 'Goatman'</p>
-      <p [ngClass]="{fifth}" *ngFor="let click of buttonClicks"></p>
+      <div [ngStyle]="{backgroundColor: click >= 5 ? 'blue' : 'transparent'}" [ngClass]="{white: click >= 5}" *ngFor="let click of buttonClicks">{{ click }}</div>
     </div>
   </div>
 </div>

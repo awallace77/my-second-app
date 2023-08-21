@@ -11,15 +11,19 @@ export class AppComponent {
   name = 'Andrew';
   showDetails: boolean = false;
   buttonClicks = [];
-  buttonClick = 0;
 
   randomString(): string{
     return "Hellow World";
   }
 
   onShowDetails(){
-    this.showDetails = true;
-    this.buttonClick++;
-    this.buttonClicks.push(this.buttonClick);
+    this.showDetails = !this.showDetails;
+    this.buttonClicks.push(this.buttonClicks.length + 1);
+  }
+
+  getBackgroundColor(){
+    if(this.buttonClicks.length >= 5){
+      return 'blue';
+    }
   }
 }
