@@ -18,7 +18,7 @@ export class AppComponent {
 
   onShowDetails(){
     this.showDetails = !this.showDetails;
-    this.buttonClicks.push(this.buttonClicks.length + 1);
+    this.buttonClicks.push(new Date());
   }
 
   getBackgroundColor(){
