@@ -6,7 +6,20 @@
       <p>{{ name }}</p>
       <hr />
       <p>{{ randomString() }}</p>
+    </div>
+  </div>
 
+  <hr/>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>My Servers</h2>
+      <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      <br/>
+      <ul class="list-group">
+        <li class="list-group-item"
+          *ngFor="let item of server; let i = index"
+          (click)="onRemoveServer(i)">{{ item }}</li>
+      </ul>
     </div>
   </div>
 </div>
