@@ -1,13 +1,19 @@
 <div class="container">
+  <!--Listen to an event "serverElements" and run onServerAdded using the data (via $event) from the event-->
+  <app-cockpit (serverElements)="onServerAdded($event)"></app-cockpit>
+  <hr>
   <div class="row">
     <div class="col-xs-12">
-      <h1>App Component</h1>
-      <input type="text" [(ngModel)]="name" />
-      <p>{{ name }}</p>
-      <hr />
-      <p>{{ randomString() }}</p>
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [srvElement]='serverElement'
+        [ngStyle]="{'color': serverElement.type === 'blueprint' ? 'blue' : 'red'}">
 
+        <p #contentParagraph>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red;">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'" style="color: blue; font-style: italic;"> {{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
     </div>
   </div>
 </div>
-
